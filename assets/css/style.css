@@ -32,7 +32,6 @@ body {
     box-sizing: border-box;
     background-color: var(--white-main);
     font-family: "monster-re", sans-serif;
-    min-height: 200vh;
 }
 
 /* // common css  */
@@ -44,6 +43,12 @@ a {
 ul {
     list-style-type: none;
     padding: 0;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
@@ -80,7 +85,6 @@ img {
     background-color: var(--black-dark);
     margin-left: 1.5em;
 }
-
 
 .wrapper {
     width: 1200px; 
@@ -320,52 +324,61 @@ img {
 
 .catalog__main {
     margin-top: 4em;
-    height: 400px;
-    align-items: flex-end;
-}
-
-.catalog__main>.catalog__item>a {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--black-dark);
-    transition: 0.3s;
-}
-
-.catalog__main>.catalog__item>a:hover {
-    color: var(--green-matcha);
-}
-
-.catalog__main>.catalog__item>small {
-    font-weight: bold;
-    display: block;
-    margin-top: 0.8em;
-    color: var(--black-dark);
+    align-items: end;
 }
 
 .catalog__main>.catalog__item {
+    width: 500px;
     width: 22%;
+    position: relative;
 }
 
-.catalog__main>.catalog__item>img {
-    border-radius: 1em;
+.catalog__main>.catalog__item > .catalog__itemImg {
+    position: relative;
     overflow: hidden;
-    margin-bottom: 1em;
-    cursor: pointer;
 }
 
-.catalog__main>.catalog__item>img:hover~a {
-    color: var(--green-matcha);
-
+.btn--share  {
+    background-color: var(--white-main);
+    color: var(--black-dark);
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    padding: 0;
 }
 
-.catalog__main>.catalog__item.lv1 {
-    height: 60%;
+.btn--share>svg  {
+    padding: 1em;
 }
 
-.catalog__main>.catalog__item.lv2 {
-    height: 75%;
+.catalog__main>.catalog__item > .catalog__itemImg .btn--share {
+    position: absolute;
+    right: -3em;
+    top: -3em;
+    /* right: 1em;
+   top: 1em; */
+    transition: .4s ease-in-out;
 }
 
-.catalog__main>.catalog__item.lv3 {
-    height: 95%;
+.catalog__main>.catalog__item:hover > .catalog__itemImg .btn--share {
+   right: 1em;
+   top: 1em;
+}
+
+.catalog__main>.catalog__item.lv1>.catalog__itemImg img {
+    height: 200px;
+}
+
+.catalog__main>.catalog__item.lv2>.catalog__itemImg img {
+    height: 300px;
+}
+
+.catalog__main>.catalog__item.lv3>.catalog__itemImg img {
+    height: 400px;
+}
+
+.catalog__item>a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--black-dark);
 }
