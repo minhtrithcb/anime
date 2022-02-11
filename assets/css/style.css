@@ -19,7 +19,11 @@
     --black-soft: #34495e;
     --black-dark: #2c3e50;
     --orange-soft: #f9f3f1;
+    --orange-c: #f8f2f0;
     --orange: #fdb17d;
+    --yelow-light: #fdb17d;
+    --blue-light: #74b9ff;
+    --purple: #6c5ce7;
     --green-matcha: #8dbe77;
     --gradient: linear-gradient(to bottom, #fdfdfd00, #2c3e50c5);
     --boxShadow-Re: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -282,7 +286,7 @@ img {
 .catalog {
     margin-top: 4em;
     padding: 4em 0;
-    height: 900px;
+    height: 800px;
     background-color: var(--orange-soft);
 }
 
@@ -336,6 +340,7 @@ img {
 .catalog__main>.catalog__item > .catalog__itemImg {
     position: relative;
     overflow: hidden;
+    border-radius: 2em;
 }
 
 .btn--share  {
@@ -355,14 +360,16 @@ img {
     position: absolute;
     right: -3em;
     top: -3em;
-    /* right: 1em;
-   top: 1em; */
     transition: .4s ease-in-out;
 }
 
 .catalog__main>.catalog__item:hover > .catalog__itemImg .btn--share {
    right: 1em;
    top: 1em;
+}
+
+.catalog__main>.catalog__item:hover > a {
+   color: var(--green-matcha);
 }
 
 .catalog__main>.catalog__item.lv1>.catalog__itemImg img {
@@ -381,4 +388,95 @@ img {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--black-dark);
+    display: block;
+    transition: 0.4s;
+    margin: 0.2em 0;
+}
+
+.catalog__item>small {
+    font-weight: bold;
+    color: var(--black-dark);
+}
+
+/* /// INTRO  */
+.intro-main {
+    background-color: var(--orange-c);
+}
+
+.intro-skillx {
+    padding-bottom: 4em;
+}
+
+.intro-skillx>div{
+    width: 50%;
+    height: 200px;
+
+}
+
+.intro-skillx>div>p{
+    font-family: "monster-bold";
+    font-size: 1.2rem;
+    line-height: 0.6em;
+}
+
+.intro-skillx>div:first-child p{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.intro-skillx>div:last-child {
+    padding-top: 2em;
+}
+
+.intro-roadmap {
+    width: 30%;
+}
+
+.roadmapItem {
+    display: flex;
+    margin: 3em 0;
+}
+
+.roadmapItem> span{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    margin-right: 2em;
+    border-radius: 50%;
+    position: relative;
+}
+
+.roadmapItem> span::after{
+    content: "-------";
+    position: absolute;
+    bottom: -3em;
+    transform: rotate(90deg);
+}
+
+.roadmapItem> span .bi-award{
+    color: var(--yelow-light);
+}
+
+.roadmapItem> span .bi-book{
+    color: var(--blue-light);
+}
+
+.roadmapItem> span .bi-lightning-charge{
+    color: var(--purple);
+}
+
+.roadmapItem> div >{
+    color: var(--purple);
+}
+
+.intro-video {
+    width: 70%;
+}
+
+.intro-video > video {
+    width: 100%
+}
+
+.intro-video > .video {
+    border-radius: 3em;
 }
