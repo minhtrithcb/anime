@@ -47,9 +47,9 @@
         <div class="wrapper dflex">
             <div class="banner__left">
                 <div class="banner__paraph">
-                    <p>Watch</p><br />
-                    <p>Learn</p><br />
-                    <p>Grow</p>
+                    <p class="banner__paraph-P">Watch</p><br />
+                    <p class="banner__paraph-P">Learn</p><br />
+                    <p class="banner__paraph-P">Grow</p>
                 </div>
 
                 <div class="punchLine dflex">
@@ -437,7 +437,116 @@
         $('.btn-prev').click(function () {
             owl.trigger('prev.owl.carousel');
         })
+
     });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script>
+    gsap.from(".header", {
+        duration: 1.2,
+        y: '-100%',
+        delay: 0.5
+    })
+
+    gsap.from(".banner__right", {
+        duration: 1.2,
+        opacity: 0,
+        x: '-100%'
+    })
+
+    gsap.from(".banner__left", {
+        duration: 0.7,
+        opacity: 0,
+        delay: 0.7,
+        y: '100%',
+    })
+
+    gsap.from(".banner__paraph-P", {
+        duration: 0.7,
+        delay: 1,
+        opacity: 0,
+        stagger: 0.5,
+        y: '100%'
+    })
+
+    gsap.fromTo(".catalog",
+        {
+            opacity: 0,
+            scrollTrigger: ".catalog",
+            delay: 1.8
+        },
+        {
+            scrollTrigger: ".catalog",
+            opacity: 1,
+            duration: 1.5,
+            delay: 1.1
+        }
+    );
+
+    gsap.from(".catalog__item", {
+        duration: 0.7,
+        opacity: 0,
+        stagger: 0.5,
+        scrollTrigger: ".intro-main",
+        y: '100%'
+    })
+
+    gsap.from(".roadmapItem", {
+        duration: 0.7,
+        opacity: 0,
+        stagger: 0.5,
+        scrollTrigger: ".customer",
+        y: '100%'
+    })
+
+    gsap.fromTo(".intro-skillx",
+        {
+            duration: 1,
+            opacity: 0,
+            y: "100",
+            scrollTrigger: ".intro-video",
+        },
+        {
+            y: '0%',
+            scrollTrigger: ".intro-video",
+            opacity: 1,
+            duration: 1.5
+        }
+    );
+
+    gsap.fromTo(".intro-video",
+        {
+            duration: 1,
+            opacity: 0,
+            y: "100",
+            scrollTrigger: ".customer",
+        },
+        {
+            y: '0%',
+            scrollTrigger: ".customer",
+            opacity: 1,
+            duration: 1.5
+        }
+    );
+
+    gsap.fromTo(".video-card",
+        {
+            duration: 1,
+            opacity: 0,
+            y: "-100%",
+            scrollTrigger: ".customer",
+        },
+        {
+            y: '0%',
+            scrollTrigger: ".customer",
+            opacity: 1,
+            duration: 1.5
+        }
+    );
+
 </script>
 
 </html>
