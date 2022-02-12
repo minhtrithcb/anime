@@ -24,6 +24,7 @@
     --yelow-light: #fdb17d;
     --blue-light: #74b9ff;
     --purple: #6c5ce7;
+    --gray: #d8d8d8;
     --green-matcha: #8dbe77;
     --gradient: linear-gradient(to bottom, #fdfdfd00, #2c3e50c5);
     --boxShadow-Re: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -93,6 +94,20 @@ img {
 .wrapper {
     width: 1200px; 
     margin: 0 auto;
+}
+
+.dot-green {
+    position: relative;
+}
+
+.dot-green::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: var(--green-matcha);
+    position: absolute;
+    right: -10px;
+    bottom: 7px;
 }
 
 /* // header  */
@@ -284,8 +299,9 @@ img {
 /* // categories */
 
 .catalog {
-    margin-top: 4em;
-    padding: 4em 0;
+    /* margin-top: 4em; */
+    /* padding: 4em 0; */
+    padding-top: 4em;
     height: 800px;
     background-color: var(--orange-soft);
 }
@@ -403,10 +419,6 @@ img {
     background-color: var(--orange-c);
 }
 
-.intro-skillx {
-    padding-bottom: 4em;
-}
-
 .intro-skillx>div{
     width: 50%;
     height: 200px;
@@ -471,6 +483,7 @@ img {
 
 .intro-video {
     width: 70%;
+    position: relative;
 }
 
 .intro-video > video {
@@ -479,4 +492,188 @@ img {
 
 .intro-video > .video {
     border-radius: 3em;
+    overflow: hidden;
+    box-shadow: var(--boxShadow-Re);
+    position: relative;
+}
+
+.video-card {
+    position: absolute;
+    left: 28%;
+    top: -3em;
+    z-index: 2;
+    width: 66%;
+    background-color: var(--green-matcha);
+    height: 100px;
+}
+
+.video-card> div {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 60px;
+    padding:  0 3em;
+}
+
+.video-card> div:first-child {
+    border-right: 1px solid #000;
+}
+
+.video-card> hr {
+    background: #000;
+    transform: rotateX(90);
+}
+
+.video-card> div > b{
+    font-size: 2rem;
+    margin-right: 1em;
+}
+
+.video-card p {
+    font-size: 0.8rem;
+}
+
+/* // customer  */
+
+.customer {
+    padding-top: 4em;
+    height: 500px;
+    background-color: var(--orange-soft);
+}
+
+.customer h1 {
+    font-size: 2rem;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+.customer-carousel>div>.owl-stage  {
+    padding-left: 0 !important;
+    /* padding-right: 0 !important; */
+}
+
+/* .customer-carousel> .owl-stage-outer  {
+    overflow: unset !important;
+} */
+
+.customer-card {
+    border-radius: 1.7em;
+    padding: 1em;
+    height: 200px;
+    background-color: var(--white-main);
+}
+
+.customer-avatar > span {
+    width: 50px;
+    height: 50px;
+    background-color: #1e90ff;
+    border-radius: 50%;
+    margin-right: 1em;
+    overflow: hidden;
+}
+
+.customer-avatar > div > small{
+    color: var(--green-matcha);
+    font-weight: bold;
+}
+
+.customer-card > div {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+}
+
+.customer-nav {
+    text-align: center;
+    width: 110px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.btn-prev, .btn-next {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.btn-prev svg, .btn-next svg{
+    width: 1.4em;
+    height: 1.4em;
+}
+
+/* // footer  */
+
+footer {
+    margin-top: 2em;
+}
+
+.footer__main {
+    margin: 2em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__main>div:first-child {
+    padding-top: 1em;
+}
+
+.footer__main>div:last-child p {
+    font-size: 1.2rem;
+    font-family: "monster-bold";
+    margin-bottom: 2em;
+}
+
+.footer__main>div:last-child div {
+    height: 40px;
+}
+
+.footer__main>div:last-child input {
+    height: 40px;
+    padding: 0.7em 1.2em;
+    border: 0.5px solid var(--gray);
+}
+
+.footer__main>div:last-child span {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    color: var(--black-dark);
+    background-color: var(--green-matcha);
+}
+
+.footer__main>div>a {
+    font-family: "monster-bold";
+    font-size: 1.5rem;
+    color: var(--black-dark);    
+}
+
+.footer__main .footer__nav > ul{
+    margin-right: 2em;
+    font-weight: bold;
+}
+
+.footer__main .footer__nav > ul li{
+    color: var(--black-dark);
+    margin-bottom: 1em;
+}
+
+.footer__main .footer__nav > ul li a{
+    color: var(--black-dark);
+}
+
+.footer__sec {
+    margin-top: 1em;
+    border-top: 1px solid var(--gray);
+}
+
+.social-media svg {
+    margin-right: 1em;  
+    width: 1.4em;
+    height: 1.4em;
+    border: 1px solid var(--gray);
+    padding: 0.4em;
+    cursor: pointer;
+    border-radius: 50%;
 }
